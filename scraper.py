@@ -8,7 +8,7 @@ def scrape_title(url):
                       " Chrome/120.0.0.0 Safari/537.36"
     }
     try:
-        response = requests.get(url, headers=headers, timeout=8)
+        response = requests.get(url, headers=headers, timeout=15)
         soup = BeautifulSoup(response.text, 'html.parser')
         return soup.title.string if soup.title else "No title found"
     except Exception as e:
